@@ -4,6 +4,49 @@ An opensource selfhost bookmark program. The services currently can record the b
 
 ![image](https://github.com/ConfigurableTools/selfhost_bookmark/assets/155286068/c852ce3f-8483-4aca-8d8b-ab648dadeffb)
 
+## Download
+
+See [Release](https://github.com/ConfigurableTools/selfhost_bookmark/releases)
+
+## Usage
+
+Requirement: Python >= 3.6
+
+```bash
+unzip termux-web-bookmark_v1.2.zip
+cd bookmark
+python main.py
+```
+
+If you're using termux, it's better to make sure the program runs all the time by doing the following:
+
+```bash
+# install tool
+pkg install termux-services -y
+
+# EXIT the termux, and then RESTART，then
+cd /data/data/com.termux/files/usr/var/service
+mkdir bookmark
+cd bookmark
+
+# use vim create a file
+vim run
+```
+
+Input the following
+```bash
+#!/data/data/com.termux/files/usr/bin/bash
+cd ~/bookmark/
+python main.py
+```
+
+Add script permession
+```bash
+chmod +x run
+sv enable bookmark
+sv status bookmark
+```
+
 ## Extension
 
 [FileFox](https://addons.mozilla.org/zh-CN/firefox/addon/selfhostbookmark/) now available！
