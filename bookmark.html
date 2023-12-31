@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ClipBoard Demo</title>
+<script type="text/javascript">
+    function readClipText(){
+        var clipPromise = navigator.clipboard.readText();
+        clipPromise.then(function(clipText){
+            alert(clipText);
+        });
+
+        
+    }
+ </script>
+</head>
+<body>
+<input type="button" value="Clipboard-写数据" onclick="navigator.clipboard.writeText('123456')">
+<input type="button" value="Clipboard-读数据" onclick="navigator.clipboard.readText().then(function(clipText){ alert(clipText);})">
+<input type="button" value="Clipboard-读数据2" onclick="readClipText()">
+</body>
+</html>

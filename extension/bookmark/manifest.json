@@ -1,0 +1,46 @@
+{
+  "manifest_version":2,
+  "name":"SelfhostBookmark",
+  "version":"1.2",
+  "description":"web bookmark collect",
+  "icons":{
+     "48":"icons/bookmark.png"
+  },
+
+  "permissions": ["tabs", "storage", "*://*/*"],
+
+  "browser_action": {
+   "default_icon": "icons/bookmark.png",
+   "default_title": "SelfhostBookmark",
+   "default_popup": "popup/panel.html"
+ },
+
+ "commands": {
+   "_execute_browser_action": {
+     "suggested_key": {
+       "default": "Alt+Q"
+     }
+   }
+ }, 
+
+ "options_ui": {
+   "page": "options.html"
+ },
+
+ "browser_specific_settings": {
+   "gecko": {
+     "id": "lilnfh@163.com"
+   }
+ },
+
+  "content_scripts":[
+     {
+        "matches":[
+           "*://*/*"
+        ],
+        "js":[
+           "bookmark.js"
+        ]
+     }
+  ]
+}

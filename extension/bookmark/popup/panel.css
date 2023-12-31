@@ -1,0 +1,12 @@
+html,
+body {
+  width: 500px;
+}
+
+input{
+    width: 80%;
+}
+
+.hidden {
+  display: none;
+}
